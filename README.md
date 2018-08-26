@@ -4,8 +4,8 @@ runing:
 
 Requirement:
 ===
-  Python 2  
-  Tensorflow: >1.4  
+    Python 2  
+    Tensorflow: >1.4  
 
 
 NYT dataset can be downloaded from https://github.com/shanzhenren/CoType
