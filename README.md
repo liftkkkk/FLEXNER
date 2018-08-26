@@ -14,25 +14,8 @@ Requirement:
 
 2.Custom
 ===
-    def mix(self):
-   
-      self.base_embed=self.word_embedding_layer_base()
-      
-      encode1=self.mix_stacka('net1')
-      encode2=self.mix_stacka('net2')
-      encode3=self.mix_stacka('net3')
 
-
-      if self.mask1:
-        encode1=encode1*0.0
-      if self.stop1:
-        encode1=tf.stop_gradient(encode1)
-
-      if self.mask2:
-        encode2=encode2*0.0
-      if self.stop2:
-        encode2=tf.stop_gradient(encode2)
-      encode=tf.concat([encode1,encode2,encode3],axis=-1)
+     
     
 .Dataset
 ===
