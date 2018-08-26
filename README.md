@@ -14,15 +14,12 @@ Requirement:
 
 2.Custom
 ===
-
      
     
 .Dataset
 ===
-CoNLL-2003 dataset in data/  
-NYT dataset can be downloaded from https://github.com/shanzhenren/CoType  
-
-
+CoNLL-2003 dataset are listed [here](data)  
+NYT dataset can be [downloaded](https://github.com/shanzhenren/CoType)  
 
 
 Updating...
