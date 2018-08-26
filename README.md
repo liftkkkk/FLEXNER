@@ -1,15 +1,11 @@
-# LSTM-CRF-CSNS
-fine-tuned model is released for further research  
-**On updating....**  
-It contains many procedures in our research and experiments. 
-
+# Bi_NER
 
 runing:
 
 Requirement:
 ===
-  Python 2
-  Tensorflow: >1.4
+  Python 2  
+  Tensorflow: >1.4  
 
 
 NYT dataset can be downloaded from https://github.com/shanzhenren/CoType
