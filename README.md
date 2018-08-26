@@ -1,6 +1,5 @@
 # Bi_NER
 
-runing:
 
 Requirement:
 ===
@@ -8,6 +7,13 @@ Requirement:
     Tensorflow: >1.4  
 
 
+1.Usage
+===
+    python joint.py [-a base|att|linear|join] [-m train|restore|tune] [-g1 0|1] [-g2 0|1] [-r1 0|1] [-r2 0|1] [-mp model_path]
+
+2.Dataset
+===
+CoNLL-2003 dataset in data/
 NYT dataset can be downloaded from https://github.com/shanzhenren/CoType
 
 
