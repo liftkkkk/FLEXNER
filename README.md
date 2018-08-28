@@ -9,7 +9,6 @@ Requirement:
 
 1.Usage
 ===
-    <!-- python joint.py [-a base|att|linear|join] [-m train|restore|tune] [-g1 0|1] [-g2 0|1] [-r1 0|1] [-r2 0|1] [-mp model_path] -->
     usage: joint.py [-h] [-a ALGORITHM] [-m MODE] [-mp MODEL_PATH]
                          [-g1 GRADIENT_STOP_LSTM1] [-g2 GRADIENT_STOP_LSTM2]
                          [-g3 GRADIENT_STOP_LSTM3] [-r1 MASK_LSTM1]
