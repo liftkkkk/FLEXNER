@@ -4,7 +4,7 @@
 Requirement:
 ===
     Python 2  
-    Tensorflow: >1.4  
+    Tensorflow: >=1.4  
 
 
 1.Usage
