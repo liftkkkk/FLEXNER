@@ -14,7 +14,6 @@ Requirement:
                          [-g3 GRADIENT_STOP_LSTM3] [-r1 MASK_LSTM1]
                          [-r2 MASK_LSTM2] [-r3 MASK_LSTM3]
 
-
 	optional arguments:
 	  -h, --help            show this help message and exit
 	  -a ALGORITHM, --algorithm ALGORITHM
