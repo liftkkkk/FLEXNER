@@ -1,4 +1,4 @@
-# Bi_NER
+# Bilateral NER
 
 
 Requirement:
