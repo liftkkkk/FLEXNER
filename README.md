@@ -7,7 +7,7 @@ Requirement:
     Tensorflow: >=1.4  
 
 
-1.Usage
+Usage
 ===
     usage: joint.py [-h] [-a ALGORITHM] [-m MODE] [-mp MODEL_PATH]
                          [-g1 GRADIENT_STOP_LSTM1] [-g2 GRADIENT_STOP_LSTM2]
@@ -33,17 +33,16 @@ Requirement:
 	                        1:True 0:False
 	  -r3 MASK_LSTM3, --mask_lstm3 MASK_LSTM3
 	                        1:True 0:False
-
-
-
-2.Customize
-===
-     
+  
     
-.Dataset
+Dataset
 ===
-CoNLL-2003 dataset are listed [here](data)  
-NYT dataset can be [downloaded](https://github.com/shanzhenren/CoType)  
+
+Customize
+===
+
++ CoNLL-2003 dataset are listed [here](data)  
++ NYT dataset can be [downloaded](https://github.com/shanzhenren/CoType)  
 
 
 Updating...
