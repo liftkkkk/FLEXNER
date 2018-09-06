@@ -38,9 +38,6 @@ Usage
 Dataset
 ===
 
-Customize
-===
-
 + CoNLL-2003 dataset are listed [here](data)  
 + NYT dataset can be [downloaded](https://github.com/shanzhenren/CoType)  
 
