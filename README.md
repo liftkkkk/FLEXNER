@@ -41,6 +41,26 @@ Dataset
 + CoNLL-2003 dataset are listed [here](data)  
 + NYT dataset can be [downloaded](https://github.com/shanzhenren/CoType)  
 
+Custom
+===
+An example for Stacka
+```python
+class Stacka(Bi_NER):
+	# initialize your arch
+	...
+	
+	def mix(self):
+		# add the embeddings
+		self.base_embed=self.word_embedding_layer_base()
+		
+		#define your architerature
+		encode1=self.mix_stacka('net1')
+		encode2=self.mix_stacka('net2')
+		...
+		# concatenate the vector
+		encode=tf.concat([encode1,encode2],axis=-1)
+	...
+```
 
 Updating...
 ===
