@@ -50,7 +50,7 @@ class Stacka(Bi_NER):
     ...
     def mix(self):
         # add the embeddings
-        self.base_embed=self.word_embedding_layer_base()
+        self.base_embed=self.embedding_layer_base()
 		
         #define your architerature
         encode1=self.mix_stacka('net1')
