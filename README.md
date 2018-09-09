@@ -1,5 +1,5 @@
-# Bilateral NER
-
+## Bilateral NER
+Here is the project [page](https://liftkkkk.github.io/Bi_NER.io/).
 
 Requirement:
 ===
@@ -43,16 +43,16 @@ Dataset
 
 Custom
 ===
-3 steps to build a NER arch
+3 steps to build a NER arch.
 ```python
 class Stacka(Bi_NER):
-    # initialize your arch
+    # initialize your arch.
     ...
     def mix(self):
         # add the embeddings
         self.base_embed=self.embedding_layer_base()
 		
-        # define your arch
+        # define your arch.
         encode1=self.mix_stacka('net1')
         encode2=self.mix_stacka('net2')
         ...
@@ -64,5 +64,3 @@ class Stacka(Bi_NER):
 Updating...
 ===
 * 2018-Aug-26, Bi_NER v0.1, initial version
-  
-
