@@ -43,7 +43,7 @@ Dataset
 
 Custom
 ===
-An example for Stacka
+3 steps to build a NER arch
 ```python
 class Stacka(Bi_NER):
     # initialize your arch
@@ -52,7 +52,7 @@ class Stacka(Bi_NER):
         # add the embeddings
         self.base_embed=self.embedding_layer_base()
 		
-        # define your architerature
+        # define your arch
         encode1=self.mix_stacka('net1')
         encode2=self.mix_stacka('net2')
         ...
