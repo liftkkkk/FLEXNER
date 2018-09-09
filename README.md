@@ -1,5 +1,5 @@
 ## Bilateral NER
-Here is the project [page](https://liftkkkk.github.io/Bi_NER.io/).
+Here is the project [page](https://liftkkkk.github.io/Bi_NER/).
 
 Requirement:
 ===
