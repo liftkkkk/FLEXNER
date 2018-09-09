@@ -2,13 +2,13 @@
 Here is the project [page](https://liftkkkk.github.io/Bi_NER/).
 
 ### Requirement:
-===
+---
     Python 2  
     Tensorflow: >=1.4  
 
 
 ### Usage
-===
+---
     usage: joint.py [-h] [-a ALGORITHM] [-m MODE] [-mp MODEL_PATH]
                          [-g1 GRADIENT_STOP_LSTM1] [-g2 GRADIENT_STOP_LSTM2]
                          [-g3 GRADIENT_STOP_LSTM3] [-r1 MASK_LSTM1]
@@ -36,13 +36,13 @@ Here is the project [page](https://liftkkkk.github.io/Bi_NER/).
   
     
 ### Dataset
-===
+---
 
 + CoNLL-2003 dataset are listed [here](data)  
 + NYT dataset can be [downloaded](https://github.com/shanzhenren/CoType)  
 
 ### Custom
-===
+---
 3 steps to build a NER arch.
 ```python
 class Stacka(Bi_NER):
@@ -62,5 +62,5 @@ class Stacka(Bi_NER):
 ```
 
 ### Updating...
-===
+---
 * 2018-Aug-26, Bi_NER v0.1, initial version
