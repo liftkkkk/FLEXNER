@@ -37,7 +37,7 @@ Here is the project [page](https://liftkkkk.github.io/Bi_NER/).
     
 ### Dataset
 
-+ CoNLL-2003 dataset are listed [here](data)  
++ CoNLL-2003 dataset are listed [here](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
 + NYT dataset can be [downloaded](https://github.com/shanzhenren/CoType)  
 
 ### Custom
