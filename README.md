@@ -40,7 +40,7 @@ Here is the project [page](https://liftkkkk.github.io/Bi_NER/).
 + CoNLL-2003 dataset are listed [here](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
 + NYT dataset can be [downloaded](https://github.com/shanzhenren/CoType)  
 
-### Custom
+### Addition
 
 3 steps to build a NER arch.
 ```python
