@@ -56,7 +56,7 @@ For the separated training
 
 ### Addition
 
-3 steps to build a NER arch.
+3 steps to build a simple NER arch.
 ```python
 class Bi_Stacka(Bi_NER):
     # initialize the constructor
