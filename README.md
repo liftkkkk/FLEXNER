@@ -42,7 +42,7 @@ For the Joint training
 ```
 python joint.py -a join
 ```
-For the seperated training
+For the separated training
 ```
 (1) python joint.py -a join -r2 1 [-g2 1]
 (2) python joint.py -a join -r1 1 [-g1 1] -mp model_path -m tune
