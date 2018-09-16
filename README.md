@@ -32,8 +32,22 @@ Here is the project [page](https://liftkkkk.github.io/Bi_NER/).
 	  -r2 MASK_LSTM2, --mask_lstm2 MASK_LSTM2
 	                        1:True 0:False
 	  -r3 MASK_LSTM3, --mask_lstm3 MASK_LSTM3
-	                        1:True 0:False
-  
+	                        1:True 0:False  
+	        
+  For the Baseline model
+```
+python train.py -a base 
+```
+For the Joint training
+```
+python joint.py -a join
+```
+For the seperated training
+```
+(1) python joint.py -a join -r2 1 [-g2 1]
+(2) python joint.py -a join -r1 1 [-g1 1] -mp model_path -m tune
+(3) python joint.py -a join -g1 1 -g2 1 -mp model_path -m tune
+```
     
 ### Dataset
 
