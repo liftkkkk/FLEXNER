@@ -64,10 +64,10 @@ class Bi_Stacka(Bi_NER):
     
     # defined a arch.
     def mix(self):
-        # add the embeddings
+        # 1. add the embeddings
         self.base_embed=self.embedding_layer_base()
 		
-        # define your arch.
+        # 2. define your arch.
         encode1=self.mix_stacka('net1')
         encode2=self.mix_stacka('net2')
         
@@ -77,7 +77,7 @@ class Bi_Stacka(Bi_NER):
         # additional process
     	...
     	
-    	# crf layer
+    	# 3. crf layer
     	self.crf_layer()
 ```
 
