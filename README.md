@@ -77,7 +77,7 @@ class Bi_Stacka(Bi_NER):
         # additional process
     	...
     	
-    	# 3. crf layer
+    	# 3. add a crf layer
     	self.crf_layer()
 ```
 
