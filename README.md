@@ -58,9 +58,11 @@ For the separated training
 
 3 steps to build a NER arch.
 ```python
-class Stacka(Bi_NER):
-    # initialize your arch.
+class Bi_Stacka(Bi_NER):
+    # initialize the constructor
     ...
+    
+    # defined a arch.
     def mix(self):
         # add the embeddings
         self.base_embed=self.embedding_layer_base()
@@ -68,10 +70,15 @@ class Stacka(Bi_NER):
         # define your arch.
         encode1=self.mix_stacka('net1')
         encode2=self.mix_stacka('net2')
-        ...
+        
         # concatenate the vector
         encode=tf.concat([encode1,encode2],axis=-1)
-    ...
+        
+        # additional process
+    	...
+    	
+    	# crf layer
+    	self.crf_layer()
 ```
 
 ### Updating...
