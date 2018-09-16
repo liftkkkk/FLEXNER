@@ -72,8 +72,8 @@ class Bi_Stacka(Bi_NER):
         encode2=self.mix_stacka('net2')
         
         # concatenate the vector
-        encode=tf.concat([encode1,encode2],axis=-1)
-        
+         self.encode=tf.concat([encode1,encode2],axis=-1)
+
         # additional process
     	...
     	
