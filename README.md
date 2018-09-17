@@ -81,6 +81,10 @@ class Bi_Stacka(Bi_NER):
     	self.crf_layer()
 ```
 
+### System Overview
+<img src="./icon/ner_pipline.png" width="350">
+
+
 ### Updating...
 
 * 2018-Aug-26, Bi_NER v0.1, initial version
