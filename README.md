@@ -8,9 +8,8 @@ Here is the project [page](https://liftkkkk.github.io/Bi_NER/).
     
 ### System Overview
 
-The main modules of our system are listed here. The converter model converts the data into the structured form. Then, if using data augmentation, it will add more instances. The structured data is input into the Pre-process module to vectorize them. Next, the vectors are persisted to the database. Alternatively, the real-time process is also okay, but it will add redundant computation. Then, the Post-processing module convert results into user-friendly form. The evaluation module assesses the result.
+The main modules of our system are listed here. The converter module converts the data into the structured form. Then, if using data augmentation, it will add more instances. The structured data is input into the Pre-process module to vectorize them. Next, the vectors are persisted to the database. Alternatively, the real-time process is also okay, but it will add redundant computation. Then, the Post-processing module converts results into user-friendly form. The evaluation module assesses the result.
 <img src="./icon/ner_pipline.png" width="650">
-
 
 ### Usage
 
