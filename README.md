@@ -82,7 +82,7 @@ class Bi_Stacka(Bi_NER):
 ```
 
 ### System Overview
-<img src="./icon/ner_pipline.png" width="350">
+<img src="./icon/ner_pipline.png" width="650">
 
 
 ### Updating...
