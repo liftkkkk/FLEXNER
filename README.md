@@ -6,11 +6,6 @@ Here is the project [page](https://liftkkkk.github.io/Bi_NER/).
     Python 2  
     Tensorflow: >=1.4  
     
-### System Overview
-
-The main modules of our system are listed here. The converter module converts the data into the structured form. Then, if using data augmentation, it will add more instances. The structured data is input into the Pre-process module to vectorize them. Next, the vectors are persisted to the database. Alternatively, the real-time process is also okay, but it will add redundant computation. Then, the Post-processing module converts results into user-friendly form. The evaluation module assesses the result.
-<img src="./icon/ner_pipline.png" width="650">
-
 ### Usage
 
     usage: joint.py [-h] [-a ALGORITHM] [-m MODE] [-mp MODEL_PATH]
@@ -84,9 +79,10 @@ class Bi_Stacka(Bi_NER):
     	# 3. add a crf layer
     	self.crf_layer()
 ```
+### System Overview
 
-
-
+The main modules of our system are listed here. The converter module converts the data into the structured form. Then, if using data augmentation, it will add more instances. The structured data is input into the Pre-process module to vectorize them. Next, the vectors are persisted to the database. Alternatively, the real-time process is also okay, but it will add redundant computation. Then, the Post-processing module converts results into user-friendly form. The evaluation module assesses the result.
+<img src="./icon/ner_pipline.png" width="650">
 
 ### Updating...
 
