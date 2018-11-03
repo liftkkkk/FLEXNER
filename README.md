@@ -1,4 +1,4 @@
-## Bilateral NER
+## FlexNER
 Here is the project [page](https://liftkkkk.github.io/Bi_NER/).
 
 ### Requirement:
@@ -90,5 +90,5 @@ The main modules of our system are listed here. The converter module converts th
 ### Updating...
 
 * 2017-Sep-10, Bi_NER v0.1, initial version
-* 2018-Apr-5, Bi_NER v0.2, supproting easily customize arch. and attention mechanism
+* 2018-Apr-05, Bi_NER v0.2, supproting easily customize arch. and attention mechanism
 * 2018-Nov-03, Bi_NER v0.3, supporting different languages ( tested on English, German, Spanish, Dutch) and biomedical domain
