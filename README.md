@@ -90,3 +90,4 @@ The main modules of our system are listed here. The converter module converts th
 ### Updating...
 
 * 2018-Aug-26, Bi_NER v0.1, initial version
+* 2018-Nov-03, Bi_NER v0.2, support different languages (English, German, Spanish, Dutch) and biomedical domain
