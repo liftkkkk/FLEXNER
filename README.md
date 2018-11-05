@@ -1,6 +1,8 @@
 ## FlexNER
 Here is the project [page](https://liftkkkk.github.io/Bi_NER/).
 
+#### As long as this paper is accepted, this toolkit can be downloaded.
+
 ### Requirement:
 
     Python 2  
