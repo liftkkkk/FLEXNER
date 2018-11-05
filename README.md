@@ -1,5 +1,5 @@
 ## FlexNER
-Here is the project [page](https://liftkkkk.github.io/Bi_NER/).
+Here is the project [page](https://liftkkkk.github.io/FLEXNER/).
 
 #### As long as this paper is accepted, this toolkit can be downloaded.
 
