@@ -10,7 +10,7 @@ Here is the project [page](https://liftkkkk.github.io/FLEXNER/).
     
 ### Usage
 ```
-usage: train_transfer.py [-h] [-a ALGORITHM] [-ag AUGMENT] [-m MODE]
+usage: train.py [-h] [-a ALGORITHM] [-ag AUGMENT] [-m MODE]
                          [-mp MODEL_PATH] [-g1 GRADIENT_STOP_NET1]
                          [-g2 GRADIENT_STOP_NET2] [-g3 GRADIENT_STOP_NET3]
                          [-g4 GRADIENT_STOP_NET4] [-r1 MASK_NET1]
@@ -31,18 +31,11 @@ optional arguments:
                         1:True 0:False
   -g2 GRADIENT_STOP_NET2, --gradient_stop_net2 GRADIENT_STOP_NET2
                         1:True 0:False
-  -g3 GRADIENT_STOP_NET3, --gradient_stop_net3 GRADIENT_STOP_NET3
-                        1:True 0:False
-  -g4 GRADIENT_STOP_NET4, --gradient_stop_net4 GRADIENT_STOP_NET4
-                        1:True 0:False
   -r1 MASK_NET1, --mask_net1 MASK_NET1
                         1:True 0:False
   -r2 MASK_NET2, --mask_net2 MASK_NET2
                         1:True 0:False
-  -r3 MASK_NET3, --mask_net3 MASK_NET3
-                        1:True 0:False
-  -r4 MASK_NET4, --mask_net4 MASK_NET4
-                        1:True 0:False
+
 
 ```
 
@@ -52,13 +45,13 @@ python train.py -a base
 ```
 For the Joint training
 ```
-python joint.py -a join
+python train.py -a join
 ```
 For the separated training
 ```
-(1) python joint.py -a join -r2 1 [-g2 1]
-(2) python joint.py -a join -r1 1 [-g1 1] -mp model_path -m tune
-(3) python joint.py -a join -g1 1 -g2 1 -mp model_path -m tune
+(1) python train.py -a join -r2 1 [-g2 1]
+(2) python train.py -a join -r1 1 [-g1 1] -mp model_path -m tune
+(3) python train.py -a join -g1 1 -g2 1 -mp model_path -m tune
 ```
     
 ### Dataset
