@@ -56,8 +56,8 @@ For the separated training
     
 ### Dataset
 
-+ CoNLL-2003 dataset are listed [here](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
-+ NYT dataset can be [downloaded](https://github.com/shanzhenren/CoType)  
++ CoNLL-2003 dataset [link](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
++ NYT dataset [link](https://github.com/shanzhenren/CoType)  
 
 ### Addition
 
