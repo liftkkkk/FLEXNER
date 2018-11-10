@@ -2,7 +2,7 @@
 
 #### As long as this paper is accepted, this toolkit can be downloaded.
 
-FlexNER is a library of neural NER models designed to accelerate ML research. 
+FlexNER is a toolkit of neural NER models designed to accelerate ML research. 
 
 
 ### Contents
