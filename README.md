@@ -5,8 +5,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
-FlexNER is a toolkit of neural NER models designed to accelerate ML research. 
-
+FlexNER is a toolkit of neural NER models designed to accelerate ML research. This version of the tutorial requires TensorFlow >=1.4.
 
 
 ### Contents
