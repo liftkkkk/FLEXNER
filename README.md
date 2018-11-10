@@ -1,14 +1,26 @@
-## FlexNER
-Here is the project [page](https://liftkkkk.github.io/FLEXNER/).
+## FlexNER ([Project Tutorial](https://liftkkkk.github.io/FLEXNER/))
 
 #### As long as this paper is accepted, this toolkit can be downloaded.
 
-### Requirement
+FlexNER is a library of neural NER models designed to accelerate ML research. 
 
-    Python 2  
-    Tensorflow: >=1.4  
+
+### Contents
+
+* [Basics](#basics)
+  * [Installation](#installation)
+  * [Addition](#addition)
+* [Suggested Datasets](#suggested-datasets)
+  * [CoNLL-2002](#conll-2002)
+  * [CoNLL-2003](#conll-2003)
+  * [NYT](#nyt)
+  * [IOB,IOB2,BIOES Conversion](#iob,iob2,bioes-conversion)
+  * [Using Your Data](#using-your-data)
+* [Updating](#updating)
+
     
-### Usage
+## Basics
+### Installation
 ```
 usage: train.py [-h] [-a ALGORITHM] [-ag AUGMENT] [-m MODE]
                          [-mp MODEL_PATH] [-g1 GRADIENT_STOP_NET1]
@@ -53,11 +65,6 @@ For the separated training
 (2) python train.py -a join -r1 1 [-g1 1] -mp model_path -m tune
 (3) python train.py -a join -g1 1 -g2 1 -mp model_path -m tune
 ```
-    
-### Dataset
-
-+ CoNLL-2003 dataset [link](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
-+ NYT dataset [link](https://github.com/shanzhenren/CoType)  
 
 ### Addition
 
@@ -85,6 +92,13 @@ class Bi_Stacka(Bi_NER):
     	# 3. add a crf layer
     	self.crf_layer()
 ```
+
+
+### Suggested Datasets
+
++ CoNLL-2003 dataset [link](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
++ NYT dataset [link](https://github.com/shanzhenren/CoType)  
+
 
 ### Updating...
 
