@@ -97,14 +97,14 @@ class Bi_Stacka(Bi_NER):
 ```
 
 
-### Suggested Datasets
+## Suggested Datasets
 
 + CoNLL-2003 dataset [link](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
 + NYT dataset [link](https://github.com/shanzhenren/CoType)  
 
 
-### Updating...
+## Updating...
 
 * 2017-Sep-10, Bi_NER v0.1, initial version
-* 2018-Apr-05, Bi_NER v0.2, supproting easily customize arch. and attention mechanism
+* 2018-Apr-05, Bi_NER v0.2, supproting easily customizing arch. and attention mechanism
 * 2018-Nov-03, Bi_NER v0.3, supporting different languages ( tested on English, German, Spanish, Dutch) and biomedical domain
