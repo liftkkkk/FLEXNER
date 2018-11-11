@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
-FlexNER is a toolkit of neural NER models designed to accelerate ML research. This version of the tutorial requires TensorFlow >=1.4.
+FlexNER is a toolkit of neural NER models designed to accelerate ML research. This version of the tutorial requires TensorFlow >=1.4. This tutorial is a preview. The detailed descriptions are still in the making and it will soon be online.
 
 
 ### Contents
@@ -106,5 +106,5 @@ class Bi_Stacka(Bi_NER):
 ## Updating...
 
 * 2017-Sep-10, Bi_NER v0.1, initial version
-* 2018-Apr-05, Bi_NER v0.2, supproting easily customizing arch. and attention mechanism
+* 2018-Apr-05, Bi_NER v0.2, supporting easily customizing arch. and attention mechanism
 * 2018-Nov-03, Bi_NER v0.3, supporting different languages ( tested on English, German, Spanish, Dutch) and biomedical domain
