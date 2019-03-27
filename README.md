@@ -108,3 +108,4 @@ class Bi_Stacka(Bi_NER):
 * 2017-Sep-10, Bi_NER v0.1, initial version
 * 2018-Apr-05, Bi_NER v0.2, supporting easily customizing arch. and attention mechanism
 * 2018-Nov-03, Bi_NER v0.3, supporting different languages ( tested on English, German, Spanish, Dutch) and biomedical domain
+* 2019-Mar-13, Bi_NER v0.3, reconstructing the code
