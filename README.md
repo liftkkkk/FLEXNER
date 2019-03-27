@@ -1,14 +1,29 @@
-## FlexNER
-Here is the project [page](https://liftkkkk.github.io/FLEXNER/).
+## FlexNER ([Project Tutorial](https://liftkkkk.github.io/FLEXNER/))
 
 #### As long as this paper is accepted, this toolkit can be downloaded.
 
-### Requirement
+[![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 
-    Python 2  
-    Tensorflow: >=1.4  
+
+FlexNER is a toolkit of neural NER models designed to accelerate ML research. This version of the tutorial requires TensorFlow >=1.4. It is a preview. The detailed descriptions are still in the making.
+
+
+### Contents
+
+* [Basics](#basics)
+  * [Installation](#installation)
+  * [Addition](#addition)
+* [Suggested Datasets](#suggested-datasets)
+  * [CoNLL-2002](#conll-2002)
+  * [CoNLL-2003](#conll-2003)
+  * [NYT](#nyt)
+  * [IOB,IOB2,BIOES Conversion](#iob,iob2,bioes-conversion)
+  * [Using Your Data](#using-your-data)
+* [Updating](#updating)
+
     
-### Usage
+## Basics
+### Installation
 ```
 usage: train.py [-h] [-a ALGORITHM] [-ag AUGMENT] [-m MODE]
                          [-mp MODEL_PATH] [-g1 GRADIENT_STOP_NET1]
@@ -53,11 +68,6 @@ For the separated training
 (2) python train.py -a join -r1 1 [-g1 1] -mp model_path -m tune
 (3) python train.py -a join -g1 1 -g2 1 -mp model_path -m tune
 ```
-    
-### Dataset
-
-+ CoNLL-2003 dataset [link](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
-+ NYT dataset [link](https://github.com/shanzhenren/CoType)  
 
 ### Addition
 
@@ -86,8 +96,15 @@ class Bi_Stacka(Bi_NER):
     	self.crf_layer()
 ```
 
-### Updating...
+
+## Suggested Datasets
+
++ CoNLL-2003 dataset [link](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
++ NYT dataset [link](https://github.com/shanzhenren/CoType)  
+
+
+## Updating...
 
 * 2017-Sep-10, Bi_NER v0.1, initial version
-* 2018-Apr-05, Bi_NER v0.2, supproting easily customize arch. and attention mechanism
+* 2018-Apr-05, Bi_NER v0.2, supporting easily customizing arch. and attention mechanism
 * 2018-Nov-03, Bi_NER v0.3, supporting different languages ( tested on English, German, Spanish, Dutch) and biomedical domain
