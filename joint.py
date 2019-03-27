@@ -1,4 +1,3 @@
-#author: Hongyin Zhu
 
 import tensorflow as tf
 import numpy as np
