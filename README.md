@@ -96,10 +96,11 @@ class Bi_Stacka(Bi_NER):
     	self.crf_layer()
 ```
 
-This framework can also be adapted to multilingual research, and we leave it as a future work.   
+This framework can also be applied to multilingual research, and we leave it as a future work.   
 <span><img src="pic/lingual.png" width="300"> </span> <span>
 <img src="pic/inter_ling.png" width="300"> </span>  
-We found that networks trained in other languages can also achieve certain performance in another language (although not good enough), and based on this phenomenon we visualize the correlation between languages.  
+
+These sub-networks trained in other languages can also achieve certain performance in another language (although not good enough), and based on this phenomenon we visualize the correlation between languages.  
 <img src="pic/purple.png" width="300"/>
 
 ## Suggested Datasets
