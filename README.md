@@ -102,7 +102,7 @@ This framework can also be applied to multilingual research, and we leave it as 
 <img src="pic/inter_ling.png" width="350"> </span>  
 
 These sub-networks trained in other languages can also achieve certain performance in a new language (although not good enough), and based on this phenomenon we visualize the correlation between languages.  
-<img src="pic/purple.png" width="350"/>
+<img src="pic/purple.png" width="500"/>
 
 ## Suggested Datasets
 
