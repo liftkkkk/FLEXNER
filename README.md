@@ -97,8 +97,9 @@ class Bi_Stacka(Bi_NER):
 ```
 
 This framework can also be adapted to multilingual research, and we leave it as a future work.   
-<img src="pic/lingual.png" width="300"> 
-<img src="pic/inter_ling.png" width="300"> 
+<span><img src="pic/lingual.png" width="300"> </span> <span>
+<img src="pic/inter_ling.png" width="300"> </span>
+We found that networks trained in other languages can also achieve certain performance in another language (although not good enough), and based on this phenomenon we visualize the correlation between languages.
 <img src="pic/purple.png" width="300"/>
 
 ## Suggested Datasets
