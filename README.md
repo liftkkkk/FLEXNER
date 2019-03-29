@@ -100,7 +100,7 @@ class Bi_Stacka(Bi_NER):
     	self.crf_layer()
 ```
 #### Language Correlation
-This framework can also be applied to multilingual research, and we leave it as a future work.   
+This framework can also be applied to multilingual research.   
 <span><img src="pic/lingual.png" width="350"> </span> <span>
 <img src="pic/inter_ling.png" width="350"> </span>  
 
