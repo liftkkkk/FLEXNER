@@ -96,13 +96,15 @@ class Bi_Stacka(Bi_NER):
     	# 3. add a crf layer
     	self.crf_layer()
 ```
-
+#### Language correlation
 This framework can also be applied to multilingual research, and we leave it as a future work.   
 <span><img src="pic/lingual.png" width="350"> </span> <span>
 <img src="pic/inter_ling.png" width="350"> </span>  
 
 These sub-networks trained in other languages can also achieve certain performance in a new language (although not good enough), and based on this phenomenon we consider their micro F1 scores as a reflection of the correlation between languages, as shown below.  
 <img src="pic/purple.png" width="500"/>  
+
+#### Language interaction
 These sub-networks can also be combined to asynchronously train different languages simultaneously, allowing them to work together to update the model. At this point, we need to use separate output layers for each language because their sequence lengths are different.
 
 
