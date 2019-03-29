@@ -71,7 +71,7 @@ For the separated training
 
 ### Addition
 
-3 steps to build a simple NER arch.
+3 steps to build a simple multi-lateral NER architecture.
 ```python
 class Bi_Stacka(Bi_NER):
     # initialize the constructor
@@ -85,9 +85,10 @@ class Bi_Stacka(Bi_NER):
         # 2. define your arch.
         encode1=self.mix_stacka('net1')
         encode2=self.mix_stacka('net2')
+        encode3=self.mix_stacka('net3')
         
         # concatenate the vector
-         self.encode=tf.concat([encode1,encode2],axis=-1)
+         self.encode=tf.concat([encode1,encode2,encode3],axis=-1)
 
         # additional process
     	...
@@ -97,11 +98,11 @@ class Bi_Stacka(Bi_NER):
 ```
 
 This framework can also be applied to multilingual research, and we leave it as a future work.   
-<span><img src="pic/lingual.png" width="300"> </span> <span>
-<img src="pic/inter_ling.png" width="300"> </span>  
+<span><img src="pic/lingual.png" width="350"> </span> <span>
+<img src="pic/inter_ling.png" width="350"> </span>  
 
 These sub-networks trained in other languages can also achieve certain performance in another language (although not good enough), and based on this phenomenon we visualize the correlation between languages.  
-<img src="pic/purple.png" width="300"/>
+<img src="pic/purple.png" width="350"/>
 
 ## Suggested Datasets
 
@@ -112,6 +113,6 @@ These sub-networks trained in other languages can also achieve certain performan
 ## Updating...
 
 * 2017-Sep-10, Bi_NER v0.1, initial version
-* 2018-Apr-05, Bi_NER v0.2, supporting easily customizing arch. and attention mechanism
+* 2018-Apr-05, Bi_NER v0.2, supporting easily customizing architecture and attention mechanism
 * 2018-Nov-03, FlexNER v0.3, supporting different languages ( tested on English, German, Spanish, Dutch) and biomedical domain
 * 2019-Mar-20, FlexNER v0.3, reconstructing the code
