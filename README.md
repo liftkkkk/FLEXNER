@@ -95,7 +95,10 @@ class Bi_Stacka(Bi_NER):
     	# 3. add a crf layer
     	self.crf_layer()
 ```
-
+Our framework can also be adapted to multilingual research, and we leave it as a future work.   
+<img src="pic/lingual.png" width="500"> 
+<img src="pic/inter_ling.png" width="500"> 
+<img src="pic/purple.png" width="500"/>
 
 ## Suggested Datasets
 
