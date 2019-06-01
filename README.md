@@ -80,7 +80,7 @@ class Bi_Stacka(Bi_NER):
     # initialize the constructor
     ...
     
-    # defined a arch.
+    # define a arch.
     def mix(self):
         # 1. add the embeddings
         self.base_embed=self.embedding_layer_base()
