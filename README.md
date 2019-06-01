@@ -114,7 +114,7 @@ These sub-networks can also be combined to asynchronously train different langua
 ## Suggested Datasets
 
 + CoNLL-2003 dataset [link](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
-+ NYT dataset [link](https://github.com/shanzhenren/CoType) 
++ NYT dataset [link](https://github.com/shanzhenren/CoType)  
 The augmented data set can be 3-10 times the original training data.
 
 
