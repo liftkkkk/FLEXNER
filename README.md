@@ -1,6 +1,6 @@
 ## FlexNER ([Project Tutorial](https://liftkkkk.github.io/FLEXNER/))
 
-#### As long as this paper is accepted, this toolkit can be downloaded.
++++ updating +++
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 
