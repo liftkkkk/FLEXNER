@@ -15,30 +15,18 @@ class Base_Model(load_embeddings):
 	def __init__(self,args):
 		"""
 		Args:
-			training_seq_steps: the step number of a sequence
 		"""
-		# print '=========transfer model gan reconstruct outside========='
 		super(Base_Model,self).__init__(args)
-
-		# self.train=train
-		# self.process=Process()
-		# cause the model fail to train because you overlap the superclass self.config
 		config=Config()
-		# config=self.config
-		# self.config=config
 		self.word_embed,self.char_embed,self.vocab,self.charcab=self.load_glove_vocab(pre_char=False)
-		# self.google_embed,_,self.g_vocab,_=self.load_google_vocab()
 		self.build_vocab=self.load_buildall_vocab()
-		# print google_embed.shape
 		self.vocab_size=self.word_embed.shape[0]
 		print('vocab_size...',self.vocab_size)
 		self.charcab_size=len(self.charcab)
 		self.build_vocab_size=len(self.build_vocab)
 		print('build_vocab_size...',self.build_vocab_size)
-		# self.google_size=self.google_embed.shape[0]
 		
 		self.learning_rate=config.learning_rate
-		# self.training=train
 		self.hidden_dim=config.hidden_dim
 		self.training_seq_steps=config.training_seq_steps
 		self.lr_decay_factor=config.lr_decay_factor
@@ -48,23 +36,16 @@ class Base_Model(load_embeddings):
 		self.word_embedding_size=config.word_embedding_size
 		self.output_class_num=config.output_class_num
 		self.config_folder=config.config_folder
-		# self.logs=config.logs
-		# they are in the same dir
 		self.log_path=self.args.save_model_dir
 		self.char_dim=config.dim_char
 		self.hidden_size_char=config.hidden_size_char
 		self.word_length=config.max_word_length
-
 		self.char_cnn_filter_size=[3]
 		self.char_cnn_num_filters=100
-
-
 		initializer = tf.contrib.layers.xavier_initializer()
 		self.initializer=initializer
 		self.regularizer=tf.contrib.layers.l2_regularizer(0.001)
-
 		self.add_palceholders()
-		# self.build()
 
 	def add_palceholders(self):
 		self.lr=tf.placeholder(dtype=tf.float32,shape=(),name='lr')
@@ -84,7 +65,6 @@ class Base_Model(load_embeddings):
 			,dtype=tf.int32
 			,shape=[None,None,self.word_length])
 
-		# self.mask_x=tf.expand_dims(self.mask,axis=-1)
 		self.max_length=tf.placeholder(dtype=tf.int32,shape=(),name='max_length')
 		self.mask_x=tf.expand_dims(
 			tf.sequence_mask(self.batch_actual_length
@@ -102,28 +82,17 @@ class Base_Model(load_embeddings):
 		self.local_mask22=tf.placeholder(dtype=tf.float32,shape=[None,None],name='local_mask10')
 		self.local_mask22_=tf.expand_dims(self.local_mask22,axis=0)
 
-		# self.google_embed=tf.placeholder(dtype=tf.float32, shape=[13945, 300],name='google_embed')
-
-
 	def char_embedding_layer_lstm(self,name='char_embedding'):
 		with tf.variable_scope(name):
-			# with tf.device('/device:GPU:0'):
 			char_embedding=tf.get_variable(name='_char_embedding',
 				dtype=tf.float32,
 				shape=[self.charcab_size,self.char_dim],
 				initializer=self.initializer)
-			# tf.summary.histogram()
-			# char_embedding=tf.Variable(self.char_embed
-			# 	,name='_char_embedding',
-			# 	dtype=tf.float32,
-			# 	trainable=False)
 			self.char_embedding=char_embedding
 			tf.summary.histogram('char_embed',char_embedding)
 			word_rpt=tf.nn.embedding_lookup(char_embedding,
 				self.char_ids,name='word_rpt')
-
 			s=tf.shape(word_rpt)
-			# d=tf.shape(self.word_actual_length)
 
 			word_lengths = tf.reshape(self.batch_actual_word_length, shape=[s[0]*s[1]])
 
@@ -131,7 +100,6 @@ class Base_Model(load_embeddings):
 				[s[0]*s[1],s[2],self.char_dim],
 				self.hidden_size_char,
 				word_lengths)
-			# shape = (batch size, max sentence length, char hidden size)
 			output = tf.reshape(output,
 				shape=[s[0], s[1], 2*self.hidden_size_char])
 			concat=output
@@ -143,12 +111,6 @@ class Base_Model(load_embeddings):
 		with tf.variable_scope('cnn{}'.format(i)):
 			word=inp
 			s=tf.shape(word)
-			# constant dim length of a word
-			# dim=dim
-
-			# sent_conv: (50, 150, 220, 50)
-			# you can use 'VALID' because the width is full the length, no need worry miss position
-			# if you use 'SAME', the strid step must be 220, because if not, it will pad 0 the result is same shape with input
 			cnn_filter_size=[2,3,5]
 			num_filters=300
 			pool_output=[]
@@ -164,8 +126,6 @@ class Base_Model(load_embeddings):
 						'relu',
 						padding='SAME',
 						BN=False,phase=self.bn)
-
-					# # pool_len=self.sent_length-filter_width+1
 					sent_conv=tf.transpose(sent_conv,perm=[0,1,3,2])
 
 					pool=self.pool_layer('pool1',
@@ -175,19 +135,12 @@ class Base_Model(load_embeddings):
 						padding='VALID')
 
 					pool=tf.transpose(pool,perm=[0,1,3,2])
-
-					# pool=sent_conv
-
 					pool_output.append(pool)
 
 			concat=tf.concat(pool_output,axis=-1)
 			self.cnnd=concat
-			# s=tf.shape(concat)
-			# dim_out=num_filters*len(cnn_filter_size)
 			sent_rhp=tf.squeeze(concat,2)*self.mask_x
-			# sent_rhp=tf.reshape(concat,[s[0],s[1],600])
 			return sent_rhp
-
 
 	def char_embedding_layer_cnn(self,name='char_embedding'):
 		with tf.variable_scope(name):
@@ -197,16 +150,11 @@ class Base_Model(load_embeddings):
 					shape=[self.charcab_size,self.char_dim],
 					initializer=self.initializer)
 				tf.summary.histogram('char_embed',char_embedding)
-				# self.embed_list=[]
-				# # self.embed_list.append((char_embedding,self.model_dir+'/char.meta'))
 				word_rpt=tf.nn.embedding_lookup(char_embedding
 					,self.char_ids
 					,name='word_rpt')
-
 				s=tf.shape(word_rpt)
-			# word_rptr=tf.reshape(word_rpt,shape=[s[0]*s[1],-1,self.char_dim])
 			word_rptr=tf.reshape(word_rpt,shape=[s[0]*s[1],s[2]*self.char_dim,1,1])
-			# word_rptr_conv=tf.reshape()
 
 			pool_output=[]
 			num_filters=self.char_cnn_num_filters
@@ -241,59 +189,36 @@ class Base_Model(load_embeddings):
 
 	def word_embedding_layer_base(self,name='word_embedding'):
 		with tf.variable_scope(name):
-			# with tf.device('/device:GPU:0'):
 			if self.args.use_random_embed==1:
 				word_embedding=tf.get_variable(name='_word_embedding',
 					dtype=tf.float32,
 					shape=[self.vocab_size, 200],
 					initializer=self.initializer)
 			else:
-				# word_embedding=tf.Variable(self.word_embed,
-				# 	name='_word_embedding',
-				# 	dtype=tf.float32,
-				# 	trainable=True)
 				word_embedding=tf.get_variable(name='_word_embedding',
 					dtype=tf.float32,
 					shape=[self.vocab_size, 300],
 					initializer=tf.constant_initializer(self.word_embed,dtype=tf.float32),
 					trainable=False)
-
-			# self.word_embedding=word_embedding
-			# tf.summary.histogram('word_embed',word_embedding)
-			# # self.embedding_init = tf.assign(word_embedding,self.pretrained)
-			
 			field=tf.nn.embedding_lookup(word_embedding,
 				self.x_data,name='word')
-			# *self.mask_x
 			return field
 
 	def word_embedding_layer_share(self,field,name='word_embedding'):
 		with tf.variable_scope(name):
 			r=self.word_embedding_layer_random()
-
 			unk=tf.equal(self.x_data, 1)
 			unk=tf.expand_dims(tf.cast(unk,tf.float32),axis=-1)
 			self.unk=unk
 			r=r*unk
-
 			k=tf.greater(self.x_data, 1)
 			k=tf.expand_dims(tf.cast(k,tf.float32),axis=-1)
 			field=field*k
-			
 			field=field+r
-			# field=tf.concat([field,r],-1)
-			# print 'no using dynamic embedding...'
 			return field
 
 	def word_embedding_layer_random(self):
-		# with tf.device('/device:GPU:0'):
 		with tf.variable_scope('random_embedding'):
-			# goolge_embed=tf.constant(self.google_embed,dtype=tf.float32)
-			# word_embedding=tf.get_variable(name='_word_embedding',
-			# 	dtype=tf.float32,
-			# 	shape=[self.vocab_size, 300],
-			# 	initializer=tf.constant_initializer(self.word_embed))
-
 			word_embedding=tf.get_variable(name='_word_embedding',
 				dtype=tf.float32,
 				shape=[self.build_vocab_size, 200],
@@ -306,13 +231,10 @@ class Base_Model(load_embeddings):
 	def word_embedding_layer_share100(self,field,name='word_embedding'):
 		with tf.variable_scope(name):
 			r=self.word_embedding_layer_random100()
-			# tf.matmul(tf.reshape())
-
 			unk=tf.equal(self.x_data, 1)
 			unk=tf.expand_dims(tf.cast(unk,tf.float32),axis=-1)
 			self.unk=unk
 			r=r*unk
-
 			k=tf.greater(self.x_data, 1)
 			k=tf.expand_dims(tf.cast(k,tf.float32),axis=-1)
 			field=field*k
@@ -323,25 +245,14 @@ class Base_Model(load_embeddings):
 
 	def word_embedding_layer(self,name='word_embedding'):
 		with tf.variable_scope(name):
-			# with tf.device('/cpu:0'):
 			word_embedding=tf.Variable(self.word_embed
 				,name='_word_embedding',
 				dtype=tf.float32,
 				trainable=False)
 			self.word_embedding=word_embedding
-			# tf.summary.histogram('word_embed',word_embedding)
-			# # self.embedding_init = tf.assign(word_embedding,self.pretrained)
-			
 			field=tf.nn.embedding_lookup(word_embedding,
 				self.x_data,name='word')*self.mask_x
-
-
-			# field_=self.highwary_layer(field,name='glove')
-
-			# g_field_=self.highwary_layer(g_field,name='google')
-
 			r=self.word_embedding_layer_random()
-			# tf.matmul(tf.reshape())
 
 			unk=tf.equal(self.x_data, 1)
 			unk=tf.expand_dims(tf.cast(unk,tf.float32),axis=-1)
@@ -351,35 +262,17 @@ class Base_Model(load_embeddings):
 			k=tf.greater(self.x_data, 1)
 			k=tf.expand_dims(tf.cast(k,tf.float32),axis=-1)
 			field=field*k
-			
 			field=field+r
-
-			# g_field=self.word_embedding_layer_google()
-
-			# m=tf.layers.dense(g_field,200,use_bias=False)
-			# z=tf.nn.sigmoid(tf.layers.dense(tf.nn.tanh(tf.layers.dense(m,200,use_bias=False)  \
-			# 	+tf.layers.dense(field,200,use_bias=False)),200,use_bias=False))
-			# field=z*field+(1-z)*m
-
 			return field
 
 	def word_embedding_layer_google(self):
 		with tf.device('/cpu:0'):
 			with tf.variable_scope('google_embedding'):
-				# goolge_embed=tf.constant(self.google_embed,dtype=tf.float32)
-
 				word_embedding=tf.Variable(self.google_embed,
 					# shape=[3000002, 300]
 					name='_word_embedding',
 					dtype=tf.float32,
 					trainable=False)
-
-				# word_embedding=tf.get_variable(name='_word_embedding',
-				# 	dtype=tf.float32,
-				# 	shape=[13945, 300],
-				# 	trainable=False,
-				# 	initializer=self.initializer)
-				# word_embedding.assign(self.google_embed)
 
 				field=tf.nn.embedding_lookup(word_embedding,
 					self.x_data_google,name='field1')*self.mask_x
@@ -390,13 +283,10 @@ class Base_Model(load_embeddings):
 	def word_embedding_layer_random100(self):
 		with tf.device('/cpu:0'):
 			with tf.variable_scope('random_embedding'):
-				# goolge_embed=tf.constant(self.google_embed,dtype=tf.float32)
-
 				word_embedding=tf.get_variable(name='_word_embedding',
 					dtype=tf.float32,
 					shape=[self.build_vocab_size, 50],
 					initializer=self.initializer)
-				# word_embedding.assign(self.google_embed)
 
 				field=tf.nn.embedding_lookup(word_embedding,
 					self.x_data_random,name='field1')*self.mask_x
@@ -409,10 +299,6 @@ class Base_Model(load_embeddings):
 				state_is_tuple=True)
 			cell_bw = tf.contrib.rnn.LSTMCell(hidden_state,
 				state_is_tuple=True)
-
-			# cell_fw=tf.contrib.rnn.AttentionCellWrapper(cell_fw,attn_length=10)
-			# cell_bw=tf.contrib.rnn.AttentionCellWrapper(cell_bw,attn_length=10)
-
 			_output = tf.nn.bidirectional_dynamic_rnn(
 				cell_fw, cell_bw, input_rhp,
 				sequence_length=sequence_length, dtype=tf.float32)
@@ -439,21 +325,11 @@ class Base_Model(load_embeddings):
 		with tf.variable_scope(name):
 
 			filter=tf.get_variable('filter',filter_shape,tf.float32,initializer=self.initializer)
-			# bias=tf.Variable(tf.constant(0.0,shape=[filter_shape[3]]),name='bias')
 			bias=tf.get_variable('bias',[filter_shape[3]],tf.float32,initializer=self.initializer)
 			tf.summary.histogram('filter',filter)
-			# tf.summary.histogram('bias',bias)
 			input=tf.reshape(input,input_reshape)
 			conv_out=tf.nn.conv2d(input,filter,strides=cnn_strid,padding=padding)
-
 			conv_out=tf.nn.bias_add(conv_out,bias)
-
-			# conv_out=tf.layers.batch_normalization(conv_out,
-			# 	axis=-1,
-			# 	center=True,
-			# 	scale=True, 
-			# 	training=phase,
-			# 	name='bn')
 			
 			if active=='relu':
 				activation=tf.nn.relu(conv_out)
@@ -463,7 +339,6 @@ class Base_Model(load_embeddings):
 				activation=tf.nn.sigmoid(conv_out)
 			elif active=='leaky_relu':
 				activation=tf.nn.leaky_relu(conv_out)
-			# tf.summary.histogram('activation',activation)
 		return activation
 
 
@@ -496,29 +371,15 @@ class Base_Model(load_embeddings):
 				kernel_regularizer= None,
 				use_bias=bias,
 				name='linear')
-			# return dense
 			if bn:
-				# s=tf.shape(dense)
-				# dense=tf.expand_dims(dense,axis=2)
 				dense_bn=tf.layers.batch_normalization(dense,
 					# axis=-1,
 					center=True,
 					scale=True, 
 					training=self.bn,
 					name='bn')
-				# dense_bn=tf.squeeze(dense_bn,axis=2)
-				# dense_bn = tf.keras.layers.BatchNormalization()(dense, training=self.bn)
-
 			else:
 				dense_bn=dense
-
-			# dense_bn=tf.contrib.layers.batch_norm(dense,
-			# 	center=True,
-   # 				scale=True,
-   # 				is_training=self.bn
-			# 	)
-			# dense_bn=dense
-
 			if linear:
 				return dense_bn
 			dense_ac=activation(dense_bn)
