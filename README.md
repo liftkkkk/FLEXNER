@@ -53,8 +53,6 @@ optional arguments:
                         1:True 0:False
   -r2 MASK_NET2, --mask_net2 MASK_NET2
                         1:True 0:False
-
-
 ```
 
   For the Baseline model
@@ -113,7 +111,11 @@ These sub-networks can also be combined to asynchronously train different langua
 
 ## Suggested Datasets
 
-+ CoNLL-2003 dataset [link](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
++ CoNLL-2003 English [link](https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003)  
++ CoNLL-2003 German link](https://www.clips.uantwerpen.be/conll2003/ner/) 
++ CoNLL-2002 Spanish
++ CoNLL-2002 Dutch
++ Chinese 
 + NYT dataset [link](https://github.com/shanzhenren/CoType)  
 The augmented data set can be 3-10 times the original training data.
 
