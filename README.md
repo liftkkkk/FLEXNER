@@ -121,8 +121,7 @@ The augmented data set can be 3-10 times the original training data.
 
 
 ## Updating...
-
-* 2017-Sep-10, Bi_NER v0.1, initial version
-* 2018-Apr-05, Bi_NER v0.2, supporting easily customizing architecture and attention mechanism
-* 2018-Nov-03, FlexNER v0.3, supporting different languages ( tested on English, German, Spanish, Dutch) and biomedical domain
 * 2019-Mar-20, FlexNER v0.3, reconstructing the code
+* 2018-Nov-03, FlexNER v0.3, supporting different languages ( tested on English, German, Spanish, Dutch) and biomedical domain
+* 2018-Apr-05, Bi_NER v0.2, supporting easily customizing architecture and attention mechanism
+* 2017-Sep-10, Bi_NER v0.1, initial version
