@@ -28,31 +28,69 @@ FlexNER is a toolkit of neural NER models designed to accelerate ML research. Th
 ## Basics
 ### Installation
 ```
-usage: train.py [-h] [-a ALGORITHM] [-ag AUGMENT] [-m MODE]
-                         [-mp MODEL_PATH] [-g1 GRADIENT_STOP_NET1]
-                         [-g2 GRADIENT_STOP_NET2] [-g3 GRADIENT_STOP_NET3]
-                         [-g4 GRADIENT_STOP_NET4] [-r1 MASK_NET1]
-                         [-r2 MASK_NET2] [-r3 MASK_NET3] [-r4 MASK_NET4]
+usage: run_n1.py [-h] [-a ALGORITHM] [-m MODE] [-mp MODEL_PATH]
+                 [--save_model_dir SAVE_MODEL_DIR] [--lang LANG]
+                 [--train_h5 TRAIN_H5] [--test_h5 TEST_H5]
+                 [--test_pkl TEST_PKL] [--corpus CORPUS]
+                 [--results_report RESULTS_REPORT]
+                 [--predict_file PREDICT_FILE] [--epoch EPOCH]
+                 [--save_step SAVE_STEP] [--use_random_embed USE_RANDOM_EMBED]
+                 [--word_embed_h5 WORD_EMBED_H5]
+                 [--word_embed_voc WORD_EMBED_VOC] [--char_voc CHAR_VOC]
+                 [--build_voc BUILD_VOC] [-g1 GRADIENT_STOP_NET1]
+                 [-g2 GRADIENT_STOP_NET2] [-g3 GRADIENT_STOP_NET3]
+                 [-g4 GRADIENT_STOP_NET4] [-r1 MASK_NET1] [-r2 MASK_NET2]
+                 [-r3 MASK_NET3] [-r4 MASK_NET4]
 
-This list provides the options to control the runing status.
+Main settings
 
 optional arguments:
   -h, --help            show this help message and exit
   -a ALGORITHM, --algorithm ALGORITHM
-                        Select an algorithm for the model
-  -ag AUGMENT, --augment AUGMENT
-                        1:True 0:False
-  -m MODE, --mode MODE  Select training model. train, restore, tune
+                        model name
+  -m MODE, --mode MODE  restore train tune
   -mp MODEL_PATH, --model_path MODEL_PATH
-                        Select the model path
+                        load a model from the path
+  --save_model_dir SAVE_MODEL_DIR
+                        save a model to the folder
+  --lang LANG           language name
+  --train_h5 TRAIN_H5   train set h5 file
+  --test_h5 TEST_H5     test set h5 file
+  --test_pkl TEST_PKL   test set pkl file
+  --corpus CORPUS       corpus name
+  --results_report RESULTS_REPORT
+                        F1 score file
+  --predict_file PREDICT_FILE
+                        output
+  --epoch EPOCH         epoch number
+  --save_step SAVE_STEP
+                        how many steps to save a model
+  --use_random_embed USE_RANDOM_EMBED
+                        whether or not to use random embeddings
+  --word_embed_h5 WORD_EMBED_H5
+                        path fo word embeddings
+  --word_embed_voc WORD_EMBED_VOC
+                        path of vocab
+  --char_voc CHAR_VOC   path of vocab
+  --build_voc BUILD_VOC
+                        path of build vocab
   -g1 GRADIENT_STOP_NET1, --gradient_stop_net1 GRADIENT_STOP_NET1
                         1:True 0:False
   -g2 GRADIENT_STOP_NET2, --gradient_stop_net2 GRADIENT_STOP_NET2
+                        1:True 0:False
+  -g3 GRADIENT_STOP_NET3, --gradient_stop_net3 GRADIENT_STOP_NET3
+                        1:True 0:False
+  -g4 GRADIENT_STOP_NET4, --gradient_stop_net4 GRADIENT_STOP_NET4
                         1:True 0:False
   -r1 MASK_NET1, --mask_net1 MASK_NET1
                         1:True 0:False
   -r2 MASK_NET2, --mask_net2 MASK_NET2
                         1:True 0:False
+  -r3 MASK_NET3, --mask_net3 MASK_NET3
+                        1:True 0:False
+  -r4 MASK_NET4, --mask_net4 MASK_NET4
+                        1:True 0:False
+
 ```
 
   For the Baseline model
