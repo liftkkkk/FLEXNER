@@ -89,7 +89,7 @@ optional arguments:
   -r3 MASK_NET3, --mask_net3 MASK_NET3
                         1:True 0:False
   -r4 MASK_NET4, --mask_net4 MASK_NET4
-                        1:True 0:False
+                        1:True 0:False 
 
 ```
 
