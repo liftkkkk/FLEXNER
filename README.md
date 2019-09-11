@@ -22,7 +22,7 @@ FlexNER is a toolkit of neural NER models designed to accelerate ML research. Th
   * [NYT](#nyt)
   * [IOB,IOB2,BIOES Conversion](#iob,iob2,bioes-conversion)
   * [Using Your Data](#using-your-data)
-  * [Story of FlexNER](#story-of-flexner)
+* [Story of FlexNER](#story-of-flexner)
 * [Updating](#updating)
 
     
