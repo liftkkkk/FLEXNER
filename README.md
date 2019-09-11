@@ -22,6 +22,7 @@ FlexNER is a toolkit of neural NER models designed to accelerate ML research. Th
   * [NYT](#nyt)
   * [IOB,IOB2,BIOES Conversion](#iob,iob2,bioes-conversion)
   * [Using Your Data](#using-your-data)
+  * [Story of FlexNER](#story-of-flexner)
 * [Updating](#updating)
 
     
@@ -157,10 +158,11 @@ These sub-networks can also be combined to asynchronously train different langua
 + NYT dataset [link](https://github.com/shanzhenren/CoType)  
 The augmented data set can be 3-10 times the original training data.
 
+## Story of FlexNER
+At the very begining (2017-Sep), the idea of entity augmentation is a sort of simple because I only use shallow network blocks (i.e. LSTM layer and additive attention). Then, 2018-Nov, BERT completely beats this approach. I can not think of using the effective transformer blocks. (:(|)!!!
 
 ## Updating...
 * 2019-Mar-20, FlexNER v0.3, reconstructing the code
-* 2019-Jan-01, BERT beats this approach, and I can not think of using effective transformer blocks
 * 2018-Nov-03, FlexNER v0.3, support different languages ( tested on English, German, Spanish, Dutch) and biomedical domain
 * 2018-Apr-05, Bi_NER v0.2, support easily customizing architecture and more attention mechanism
-* 2017-Sep-10, Bi_NER v0.1, initial version, present NER data augmentation. This idea is a sort of simple because I use shallow network blocks (i.e. LSTM layer and additive attention). 
+* 2017-Sep-10, Bi_NER v0.1, initial version, present NER data augmentation 
