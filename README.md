@@ -160,6 +160,7 @@ The augmented data set can be 3-10 times the original training data.
 
 ## Updating...
 * 2019-Mar-20, FlexNER v0.3, reconstructing the code
+* 2019-Jan-01, BERT beats this approach, and I can not think of using effective transformer blocks
 * 2018-Nov-03, FlexNER v0.3, support different languages ( tested on English, German, Spanish, Dutch) and biomedical domain
-* 2018-Apr-05, Bi_NER v0.2, support easily customizing architecture and attention mechanism
-* 2017-Sep-10, Bi_NER v0.1, initial version
+* 2018-Apr-05, Bi_NER v0.2, support easily customizing architecture and more attention mechanism
+* 2017-Sep-10, Bi_NER v0.1, initial version, present NER data augmentation. This idea is a sort of simple because I use shallow network blocks (i.e. LSTM layer and additive attention). 
