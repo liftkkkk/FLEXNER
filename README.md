@@ -159,7 +159,7 @@ These sub-networks can also be combined to asynchronously train different langua
 The augmented data set can be 3-10 times the original training data.
 
 ## Story of FlexNER
-Some friends may want to know why you are doing this, because we have stronger models. In fact, this framework has a story. At the very begining (2017-Sep), the idea of entity augmentation is a sort of simple because I only use shallow network blocks (i.e. LSTM layer and additive attention), so it naturally does not meet the requirements for publishing the paper. I think I should introduce some more complicated mechanisms, so I tried several attentions, but the improvement is not obvious. Then, 2018-Nov, BERT completely beats this approach. I can not think of using the effective transformer blocks. (:(|)!!!  
+Some friends may want to know why you are doing this, and now we have stronger models. In fact, this framework has a story. At the very begining (2017-Sep), the idea of entity augmentation is a sort of simple because I only use shallow network blocks (i.e. LSTM layer and additive attention), so it naturally does not meet the requirements for publishing the paper. I think I should introduce some more complicated mechanisms, so I tried several attentions, but the improvement is not obvious. Besides, I think there is a kind of <strong>context common sense</strong>, which is why I proposed this method. <strong>Context common sense</strong> is different from the KB common sense. This theory is not perfect enough, so I am just talking about it. Because this theory may be challenged before it is completed. Then, 2018-Nov, BERT completely beats this approach. I can not think of using the effective transformer blocks. (:(|)!!!  
 
 This story may answer the questions.
 
