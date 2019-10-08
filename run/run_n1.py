@@ -112,6 +112,7 @@ if args.mode=='restore':
 elif args.mode=='train':
 	saver=tf.train.Saver(max_to_keep=None)
 elif args.mode=='tune':
+	pass
 
 
 cross_lossx=[]
